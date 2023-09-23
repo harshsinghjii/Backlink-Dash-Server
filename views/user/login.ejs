@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>User Login</title>
 </head>
 <body>
-    <h1>Login</h1>
+    <h1>User Login</h1>
     <form action="/users/login" method="POST">
         <div>
             <label for="email">Email:</label>
@@ -16,7 +16,10 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Login</button><br><br>
+    </form>
+    <form action="/admin/login" method="post">
+        <button type="submit">Admin?</button>
     </form>
 </body>
 </html>

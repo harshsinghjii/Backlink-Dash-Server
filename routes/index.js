@@ -3,14 +3,17 @@ const router = express.Router();
 
 // Main page
 router.get('/', (req, res) => {
-  if (req.isAuthenticated()) {
-    if (req.user.isAdmin) {
-      res.redirect('/admin/dashboard');
-    } else {
-      res.redirect('/user/dashboard');
-    }
+  res.render('index');
+});
+
+router.post('/index', (req, res) => {
+  const { role } = req.body;
+  if (role === 'admin') {
+    res.redirect('/admin/login');
+  } else if (role === 'user') {
+    res.redirect('/users/login');
   } else {
-    res.redirect('/login');
+    res.redirect('/');
   }
 });
 
