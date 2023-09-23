@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 // Set up session
 app.use(session({
-  secret: 'your_secret_key',
+  secret: process.env.SESSION_SECRET_KEY,
   resave: true,
   saveUninitialized: true
 }));
